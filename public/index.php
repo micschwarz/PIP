@@ -12,9 +12,9 @@ define('APP_DIR', ROOT_DIR . '../src/application/');
 
 // Includes
 require APP_DIR . '/config/config.php';
-require ROOT_DIR . '../src/system/model.php';
-require ROOT_DIR . '../src/system/view.php';
-require ROOT_DIR . '../src/system/controller.php';
+require ROOT_DIR . '../src/system/Model.php';
+require ROOT_DIR . '../src/system/View.php';
+require ROOT_DIR . '../src/system/Controller.php';
 require ROOT_DIR . '../src/system/pip.php';
 
 // Define base URL
