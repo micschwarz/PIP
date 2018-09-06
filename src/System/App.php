@@ -22,8 +22,8 @@ class App
 
         // Check the action exists
         if (!method_exists($controllerInstance, $action)) {
-            $controller = $config['error_controller'];
-            require_once APP_DIR . 'Controller/' . $controller . '.php';
+            $class = '\\Application\\Controller\\' . $this->config['error_controller'];
+            $controllerInstance = new $class();
             $action = 'index';
         }
 
