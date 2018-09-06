@@ -1,5 +1,7 @@
 <?php
 
+namespace System;
+
 class App
 {
     private $config;
@@ -21,12 +23,12 @@ class App
         // Check the action exists
         if (!method_exists($controllerInstance, $action)) {
             $controller = $config['error_controller'];
-            require_once APP_DIR . 'controllers/' . $controller . '.php';
+            require_once APP_DIR . 'Controller/' . $controller . '.php';
             $action = 'index';
         }
 
         // Call method with params
-        die(call_user_func_array([$controllerInstance, $action], $this->getParams($url)));
+        die(\call_user_func_array([$controllerInstance, $action], $this->getParams($url)));
     }
 
     /**
@@ -84,15 +86,13 @@ class App
     }
 
     private function loadController(String $controller) {
-        $controller_path = APP_DIR . 'controllers/' . $controller . '.php';
-        if (file_exists($controller_path)) {
-            require_once $controller_path;
-        } else {
-            $controller = $this->config['error_controller'];
-            require_once APP_DIR . 'controllers/' . $controller . '.php';
+        $class = '\\Application\\Controller\\' . $controller;
+
+        if (!class_exists($class)) {
+            $class = '\\Application\\Controller\\' . $this->config['error_controller'];
         }
 
-        return new $controller;
+        return new $class;
     }
 
     private function getParams(String $url): array

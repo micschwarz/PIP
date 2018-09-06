@@ -1,6 +1,8 @@
 <?php
 
-class Error extends Controller {
+namespace Application\Controller;
+
+class ErrorHandler extends \System\Controller {
 
 	function index()
 	{

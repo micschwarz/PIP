@@ -1,5 +1,7 @@
 <?php
 
+namespace System;
+
 class View {
 
 	private $pageVars = array();
@@ -23,7 +25,7 @@ class View {
 		require($this->template);
 		echo ob_get_clean();
 	}
-    
+
 }
 
 ?>

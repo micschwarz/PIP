@@ -1,6 +1,8 @@
 <?php
 
-class Main extends Controller {
+namespace Application\Controller;
+
+class Main extends \System\Controller {
 
 	public function index()
 	{

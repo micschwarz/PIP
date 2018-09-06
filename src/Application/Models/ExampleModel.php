@@ -1,6 +1,6 @@
 <?php
 
-class Example_model extends Model {
+class Example_model extends \System\Model {
 
 	public function getSomething($id)
 	{
