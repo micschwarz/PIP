@@ -4,30 +4,28 @@ namespace System;
 
 class Controller {
 
-	public function loadModel($name)
+	public function loadModel($name): Model
 	{
-		require(APP_DIR .'models/'. strtolower($name) .'.php');
+		$model = "\\Application\\Models\\" . $name;
 
-		$model = new $name;
-		return $model;
+        return new $model();
 	}
 
-	public function loadView($name)
+	public function loadView($name): View
 	{
-		$view = new View($name);
-		return $view;
+		return new View($name);
 	}
 
 	public function loadPlugin($name)
 	{
-		require(APP_DIR .'plugins/'. strtolower($name) .'.php');
+        $plugin = "\\Application\\Plugin\\" . $name;
+        return new $plugin();
 	}
 
 	public function loadHelper($name)
 	{
-		require(APP_DIR .'helpers/'. strtolower($name) .'.php');
-		$helper = new $name;
-		return $helper;
+        $helper = "\\Application\\Helper\\" . $name;
+        return new $helper();
 	}
 
 	public function redirect($loc)
@@ -38,5 +36,3 @@ class Controller {
 	}
 
 }
-
-?>
