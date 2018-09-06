@@ -85,7 +85,8 @@ class App
         return $this->config['default_action'];
     }
 
-    private function loadController(String $controller) {
+    private function loadController(String $controller)
+    {
         $class = '\\Application\\Controller\\' . $controller;
 
         if (!class_exists($class)) {
@@ -97,10 +98,11 @@ class App
 
     private function getParams(String $url): array
     {
-        return array_slice($this->splitUrl($url), 2);
+        return \array_slice($this->splitUrl($url), 2);
     }
 
-    private function splitUrl(String $url): array {
+    private function splitUrl(String $url): array
+    {
         return explode('/', $url);
     }
 }
