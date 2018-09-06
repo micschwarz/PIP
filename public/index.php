@@ -15,10 +15,10 @@ require APP_DIR . '/config/config.php';
 require ROOT_DIR . '../src/system/Model.php';
 require ROOT_DIR . '../src/system/View.php';
 require ROOT_DIR . '../src/system/Controller.php';
-require ROOT_DIR . '../src/system/pip.php';
+require ROOT_DIR . '../src/system/Pip.php';
 
 // Define base URL
 global $config;
 define('BASE_URL', $config['base_url']);
 
-pip();
+new Pip();
