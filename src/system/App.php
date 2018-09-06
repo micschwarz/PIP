@@ -1,6 +1,6 @@
 <?php
 
-class Pip
+class App
 {
     private $config;
 

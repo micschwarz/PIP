@@ -21,4 +21,4 @@ require ROOT_DIR . '../src/system/Pip.php';
 global $config;
 define('BASE_URL', $config['base_url']);
 
-new Pip();
+new App();
