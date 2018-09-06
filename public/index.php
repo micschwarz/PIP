@@ -15,7 +15,7 @@ require APP_DIR . '/config/config.php';
 require ROOT_DIR . '../src/system/Model.php';
 require ROOT_DIR . '../src/system/View.php';
 require ROOT_DIR . '../src/system/Controller.php';
-require ROOT_DIR . '../src/system/Pip.php';
+require ROOT_DIR . '../src/system/App.php';
 
 // Define base URL
 global $config;
